@@ -147,7 +147,7 @@ async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.chat_data.clear()
     await update.message.reply_text("Game đã được đặt lại. Tất cả người chơi đã thoát.")
 
-app = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
+app = ApplicationBuilder().token("7519846312:AAFFodb0zVpjAPPLGygeOE232UBdEYTh7B4").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("join", join))
