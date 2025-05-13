@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for bida-tinhcam on 2025-05-13T18:32:31+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bida-tinhcam'
+primary_region = 'sin'
+
+[build]
+  image = "python:3.11"
+
+[env]
+  PYTHONUNBUFFERED = "true"
+
+[experimental]
+  auto_rollback = true
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
